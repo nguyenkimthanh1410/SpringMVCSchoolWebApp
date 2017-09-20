@@ -1,0 +1,16 @@
+Date: 17-Sep-2017
+Account for Testing:
+Refer to LoginService.java for setup
+
+// Admin accounts
+admins.add(new UserIdentity("admin", "admin"));
+admins.add(new UserIdentity("thanh", "thanh"));
+		
+// Teacher accounts => Haven't implemented yet
+teachers.add(new UserIdentity("teacher", "teacher"));
+teachers.add(new UserIdentity("meo", "meo"));
+		
+// Student accounts => Haven't implemented yet
+students.add(new UserIdentity("student", "student"));
+students.add(new UserIdentity("rua", "rua"));
+

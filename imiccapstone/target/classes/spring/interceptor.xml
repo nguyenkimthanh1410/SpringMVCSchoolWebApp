@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+         http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+
+	<!-- IMPORTANT -->
+	<!-- Configures the annotation-driven Spring MVC Controller programming model -->
+	<mvc:annotation-driven />
+	
+	<!-- The ordered set of interceptors that intercept HTTP Servlet Requests handled by Controllers. 
+	Interceptors allow 
+	 requests to be pre/post processed before/after handling. Each interceptor must implement the 
+	 org.springframework.web.servlet.HandlerInterceptor or 
+	 org.springframework.web.context.request.WebRequestInterceptor interface -->
+	<mvc:interceptors>
+			<bean id="logActivityInterceptor" class="imic.springmvc.interceptor.LogInterceptor"></bean>
+	</mvc:interceptors>
+</beans>

@@ -1,0 +1,2 @@
+- Apply SpringMVC with Maven support to build project to manage users, classes, class registrations in school context.
+- Language used: Java, EL, Javascript, HTML/CSS

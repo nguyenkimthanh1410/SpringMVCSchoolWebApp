@@ -1,0 +1,388 @@
+/**
+	@author: QuyNQ
+	@content: Responsive mobile
+**/
+@media screen and (max-width:1200px) {
+	.contact-body span.col-lg-1 {
+		display: none;
+	}
+	.card .card-body {
+		padding: 15px;
+	}
+}
+
+@media screen and (max-width:1024px) {
+	/* /////////////////////DATTV////////////////////////////////////////// */
+	.add-account-page .col-ext {
+		width: 80px;
+	}
+
+	/*/////////////////////PHUCHN////////////////////////////*/
+	.add-company-page .col-ext {
+		width: 80px;
+	}
+}
+
+@media screen and (max-width:992px) {
+	.contact-body .text-right {
+		text-align: left;
+	}
+	.detail-contact-body .text-right {
+		text-align: right;
+	}
+}
+
+@media screen and (max-width:991px) {
+	/* Begin dattv */
+	.view-account-page	.assign-to-me {
+		margin-top: 42px;
+		margin-left: 0;
+	}
+	.view-account-page .search-frm-section .text-right, .view-account-page  .search-frm-section .lbl-search
+		{
+		padding-left: 10px;
+	}
+	.account-detail-page .allowSolicication-margin {
+		margin-left: -26px;
+	}
+	/* Begin quynq */
+	.contact-page	.assign-to-me {
+		margin-top: 42px;
+		margin-left: 0;
+	}
+	.contact-page .search-frm-section .text-right, .contact-page .search-frm-section .lbl-search
+		{
+		padding-left: 10px;
+	}
+	.view-account-box .txt, .view-event-box .txt {
+		text-align: left;
+	}
+}
+
+@media screen and (max-width:900px) {
+	/* Begin dattv */
+	.add-new-account-box.form-group {
+		margin-bottom: 0;
+		width: 100%;
+	}
+	.add-account-page .col-full-width {
+		width: 100%;
+	}
+	.form-group-account {
+		margin-left: -15px;
+		padding-right: 15px;
+	}
+	.form-group-account .col-item {
+		width: 100%;
+		text-align: right;
+	}
+	.form-group-account .right-col {
+		display: block;
+		width: 100%;
+		margin-right: 0;
+	}
+
+	/* Begin phuchn */
+	.add-new-company-box.form-group {
+		margin-bottom: 0;
+		width: 100%;
+	}
+	.add-company-page .col-full-width {
+		width: 100%;
+	}
+	.form-group-company {
+		margin-left: -15px;
+		padding-right: 15px;
+	}
+	.form-group-company .col-item {
+		width: 100%;
+		text-align: right;
+	}
+	.form-group-company .right-col {
+		display: block;
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width:857px) {
+	/* Begin quynq */
+	.add-new-contact-box .form-group {
+		margin-bottom: 0;
+	}
+	.add-new-contact-box .section-bottom-function {
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width:800px) {
+	/* Begin phuchn */
+	.add-new-company-box.form-group {
+		margin-bottom: 0;
+		width: 100%;
+	}
+	.add-company-page .col-full-width {
+		width: 100%;
+	}
+	.form-group-company {
+		margin-left: -15px;
+		padding-right: 15px;
+	}
+	.form-group-company .col-item {
+		width: 100%;
+		text-align: right;
+	}
+	.form-group-company .right-col {
+		display: block;
+		width: 100%;
+		margin-right: 0;
+	}
+	/* Begin dattv */
+	.add-new-account-box.form-group {
+		margin-bottom: 0;
+		width: 100%;
+	}
+	.add-account-page .col-full-width {
+		width: 100%;
+	}
+	.form-group-account {
+		margin-left: -15px;
+		padding-right: 15px;
+	}
+	.form-group-account .col-item {
+		width: 100%;
+		text-align: right;
+	}
+	.form-group-account .right-col {
+		display: block;
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+@media screen and (min-width:768px) {
+}
+
+@media screen and (max-width:768px) {
+	/* Begin dattv */
+	.add-new-account-box .form-group {
+		margin-bottom: 0;
+		width: 100%;
+	}
+	.add-account-page .col-full-width {
+		width: 100%;
+		display: block;
+	}
+	/* .form-group-account {
+		margin-left: -15px;
+		padding-right: 15px;
+	} */
+	.form-group-account .col-item {
+		width: 100%;
+		text-align: right;
+	}
+	.form-group-account .right-col {
+		display: block;
+		width: 100%;
+		margin-right: 0;
+	}
+	.page.col-full-width {
+		width: 100%;
+	}
+
+	/* Begin phuchn */
+	.add-new-company-box.form-group {
+		margin-bottom: 0;
+		width: 100%;
+	}
+	.add-account-page .col-full-width {
+		width: 100%;
+	}
+	.form-group-company .col-item {
+		width: 100%;
+		text-align: right;
+	}
+	.form-group-company .right-col {
+		display: block;
+		width: 100%;
+		margin-right: 0;
+	}
+	.page.col-full-width {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:767px) {
+	.contract-type-body .btn-search {
+		min-width: auto;
+		margin: 0;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.search-company-wrap .txt {
+		text-align: left;
+	}
+}
+
+@media screen and (max-width:650px) {
+	.ui-paging-info {
+		position: absolute;
+		text-align: left !important;
+		top: 0;
+		left: 10px;
+		right: 0;
+	}
+	.ui-paging-pager {
+		top: 25px;
+	}
+	#pager2 {
+		height: 50px
+	}
+	.ui-jqgrid-pager {
+		height: 50px !important;
+	}
+}
+
+@media screen and (max-width:600px) {
+	/* quynq */
+	.add-new-contact-box .col-full-width, .edit-contact-box .col-full-width,
+		.search-meter-type-wrap .col-full-width, .view-event-box .col-full-width
+		{
+		width: 100%;
+	}
+	.modal-assign .vkx-btn {
+		width: 80%;
+	}
+	.search-meter-type-wrap .btn-search {
+		margin-top: 10px !important;
+	}
+	.search-employee-wrap .btn-search {
+		margin-top: 0 !important;
+	}
+	.search-meter-type-wrap .txt {
+		text-align: left;
+	}
+	.search-meter-type-wrap .common-margin {
+		margin-top: 10px !important;
+	}
+	.col-search-btn {
+		text-align: right;
+	}
+}
+
+@media screen and (max-width:500px) {
+	/* Begin quynq */
+	.contact-page .search-frm-section .input-frm-item, .contract-type-body .frm-search-group>.row>div
+		{
+		width: 100%;
+	}
+	.contact-page .search-frm-section .form-group {
+		margin-bottom: 0;
+	}
+	.contact-page .assign-to-me {
+		margin-top: 15px;
+	}
+	.contact-page .btn-search, .add-new-contact-box .vkx-btn,
+		.edit-contact-box .vkx-btn {
+		width: 100%;
+	}
+	.contact-page .bottom-functions-section .create-vcard-btn {
+		margin-bottom: 10px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.contact-page .vkx-btn {
+		display: block;
+		margin-bottom: 15px;
+	}
+	.add-new-contact-box .btn-link-cancel, .edit-contact-box .btn-link-cancel
+		{
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.contract-type-body .frm-search-group {
+		padding: 0 15px;
+	}
+	.contract-type-body .frm-search-group>.row>div:first-child {
+		text-align: left;
+	}
+	.contract-type-body .frm-search-group>.row>div:last-child {
+		padding-top: 10px;
+		text-align: right;
+	}
+
+	/* Begin DATTV */
+	.view-account-page .search-frm-section .input-frm-item {
+		width: 100%;
+	}
+	.view-account-page .search-frm-section .form-group {
+		margin-bottom: 0;
+	}
+	.view-account-page .assign-to-me {
+		margin-top: 15px;
+	}
+	.view-account-page .btn-search, .add-new-contact-box .vkx-btn,
+		.edit-contact-box .vkx-btn {
+		width: 100%;
+	}
+	.view-account-page .bottom-functions-section .create-vcard-btn {
+		margin-bottom: 10px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.view-account-box .vkx-btn {
+		margin: 0 !important;
+		margin-top: 10px !important;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:414px) {
+	.vkx-btn {
+		width: 100%;
+		margin: 0 !important;
+		margin-top: 10px !important;
+	}
+}
+
+@media screen and (max-width:408px) {
+	.col-sub-full-width {
+		width: 100%;
+	}
+	.form-group-contact {
+		padding-left: 15px;
+		margin-left: 0;
+	}
+}
+
+}
+@media screen and (max-width:345px) {
+	/* Begin dattv */
+	.add-new-account-box.form-group {
+		margin-bottom: 0;
+		width: 100%;
+	}
+	.add-account-page .col-full-width {
+		width: 100%;
+	}
+	/* 	.form-group-account {
+		margin-left: -15px;
+		padding-right: 15px;
+	} */
+	.form-group-account .col-item {
+		width: 100%;
+		text-align: right;
+	}
+	.form-group-account .right-col {
+		display: block;
+		width: 100%;
+		margin-right: 0;
+	}
+	.add-account-page .vkx-btn {
+		width: 100%;
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width:320px) {
+}
