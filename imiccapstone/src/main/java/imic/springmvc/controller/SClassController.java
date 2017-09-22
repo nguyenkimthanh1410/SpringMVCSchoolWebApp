@@ -3,6 +3,7 @@ package imic.springmvc.controller;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -70,6 +71,7 @@ public class SClassController {
 		
 		// Get list of Teacher ids from UserService Layer
 		List<Long> teacherIds = userService.getIdsByRole(Integer.parseInt(StringPool.TEACHER_ROLE));//3
+		Collections.sort(teacherIds); // sort in ascending order
 		model.addAttribute("teacherIds", teacherIds);
 	
 		return "admin/classes/createClassForm";
@@ -85,6 +87,7 @@ public class SClassController {
 			
 			// Get list of Teacher ids from UserService Layer (!!!!Why need add this to make drop-down work after error occured
 			List<Long> teacherIds = userService.getIdsByRole(Integer.parseInt(StringPool.TEACHER_ROLE));
+			Collections.sort(teacherIds); // sort in ascending order
 			model.addAttribute("teacherIds", teacherIds);
 			return "admin/classes/createClassForm";
 		}
@@ -122,6 +125,7 @@ public class SClassController {
 		
 		// Get list of Teacher ids from UserService Layer
 		List<Long> teacherIds = userService.getIdsByRole(Integer.parseInt(StringPool.TEACHER_ROLE));
+		Collections.sort(teacherIds); // sort in ascending order.
 		model.addAttribute("teacherIds", teacherIds);		
 			
 		return "admin/classes/showEditClassForm";		
@@ -137,12 +141,14 @@ public class SClassController {
 		if(bindingResult.hasErrors()) {
 			// Get list of Teacher ids from UserService Layer (!!!!Why need add this to make drop-down work after error occured
 			List<Long> teacherIds = userService.getIdsByRole(Integer.parseInt(StringPool.TEACHER_ROLE));
+			Collections.sort(teacherIds); // sort in ascending order
 			model.addAttribute("teacherIds", teacherIds);
 			return "admin/classes/showEditClassForm";
 		}
 		
 		// Get user login
 		String userlogin = (String) request.getSession().getAttribute("userlogin");	
+		System.out.println("----------userlogin: " + userlogin);
 		sClassService.update(sClass, userlogin);
 		
 		return "redirect:/admin/classes";

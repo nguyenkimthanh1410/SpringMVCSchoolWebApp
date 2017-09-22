@@ -60,7 +60,7 @@
 		<h1 align="left"><s:message code="app-home.lbl.login" /></h1>
 		<hr style="border: 1px solid blue;">
 		
-		<sf:form commandName="userIdentity" method="post" >
+		<sf:form commandName="userLogin" method="post" >
 		
 			<section class="input-info-section">					
 					

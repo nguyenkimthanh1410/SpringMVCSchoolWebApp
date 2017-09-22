@@ -12,35 +12,19 @@
 
 
 	<!-- By default, Spring looks for your Spring beans in a file  servlet config mvc.xml-->
-
 	<!-- Use "<mvc:annotation-driven/>" in the spring configuration file instead 
-		of writing your own implementation of WebMvcConfigurationSupport -->
-	
-	<!-- Enables the Spring MVC @Controller programming model.
-	let Controller servlet know that annotations will be used for bean configurations. -->
+		of writing your own implementation of WebMvcConfigurationSupport: Spring container read and create 
+		bean for @Controller -->
 	<mvc:annotation-driven ignore-default-model-on-redirect="true"/>
 	
-	<!-- context:component-scan element is used to provide the base-package location for scanning Controller classes.  -->
+	<!--To provide the base-package location for scanning Controller classes.  -->
 	<context:component-scan base-package="imic.springmvc.*" />
 
 	
-	<!-- 3. view resolver is responsible for 
-	translating the view name in the ModelAndView into a component, such as a JSP, that renders the view .
-	 we can provide view pages location through prefix and suffix properties-->
-	
+	<!-- To translate the view name in the ModelAndView into a component, such as a JSP, that renders the view-->	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<!-- 
-	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-		<property name="formatters">
-			<set>
-				<ref bean="spitterFormatter" />
-			</set>
-		</property> 
-	
-	</bean>-->
-
 </beans>

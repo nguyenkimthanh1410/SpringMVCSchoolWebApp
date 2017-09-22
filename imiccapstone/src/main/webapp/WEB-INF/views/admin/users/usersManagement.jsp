@@ -79,28 +79,29 @@ btn {
 </style>
 <body>
 	<div class="container">
-	<div class="side-body page add-company-page">
-		<div class="page-title">
-			<div class="description">
-				<ul class="breadcrumb">
-					<li>
-						<a href="<%=request.getContextPath()%>/home"><s:message code="page-title.home" /></a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/admin/home.html"><s:message code="dashboard-title.home" /></a>
-					</li>
-					<li class="active"><s:message code="admin-home.lbl.users" /></li>	
-				</ul>			
-			</div>			
-		</div>		
-		<div>
-			<s:message code="common.lbl.login-as" />:<%=session.getAttribute("userlogin") %>
-		</div>		
-		<div class="clear-float"></div>
-		<h3 align="center"><s:message code="admin-home.lbl.users" /></h3>	
-	</div>	
-	<hr style="border: 1px solid blue;">
+		<div class="side-body page add-company-page">
+			<div class="page-title">
+				<div class="description">
+					<ul class="breadcrumb">
+						<li>
+							<a href="<%=request.getContextPath()%>/home"><s:message code="page-title.home" /></a>
+						</li>
+						<li>
+							<a href="<%=request.getContextPath()%>/admin/home.html"><s:message code="dashboard-title.home" /></a>
+						</li>
+						<li class="active"><s:message code="admin-home.lbl.users" /></li>	
+					</ul>			
+				</div>			
+			</div>		
+			<div>
+				<s:message code="common.lbl.login-as" />:<%=session.getAttribute("userlogin") %>
+			</div>		
+			<div class="clear-float"></div>
+			<h3 align="center"><s:message code="admin-home.lbl.users" /></h3>	
+		</div>	
+		<hr style="border: 1px solid blue;">
 	</div>
+	
 	<div class="container">	
 	<!-- List All -->			
 		<h2 style="float:right">
@@ -117,13 +118,13 @@ btn {
 			<tr align="center">
 				<th><s:message code="list-all.lbl.id" /></th>
 				<th><s:message code="list-all.lbl.user-name" /></th>
-				<th><s:message code="list-all.lbl.password" /></th>				
+			<%-- 	<th><s:message code="list-all.lbl.password" /></th>			 --%>	
 				<th><s:message code="list-all.lbl.firstName" /></th>
 				<th><s:message code="list-all.lbl.lastName" /></th>
 				<th><s:message code="list-all.lbl.gender" /></th>
 				<th><s:message code="list-all.lbl.dob" /></th>
 				<th><s:message code="list-all.lbl.status" /></th>
-				<th><s:message code="list-all.lbl.email" /></th>
+			<%-- 	<th><s:message code="list-all.lbl.email" /></th> --%>
 				<th><s:message code="list-all.lbl.mobile" /></th>
 				<th><s:message code="list-all.lbl.address" /></th>
 				<th><s:message code="list-all.lbl.role" /></th>
@@ -135,7 +136,7 @@ btn {
 				<tr>
 					<td><c:out value="${user.userId }" /></td>
 					<td><c:out value="${user.userName }" /></td>
-					<td><c:out value="${user.password }" /></td>
+				<%-- 	<td><c:out value="${user.password }" /></td> --%>
 					<td><c:out value="${user.firstName }" /></td>
 					<td><c:out value="${user.lastName }" /></td>					
 					
@@ -160,7 +161,7 @@ btn {
 						</c:otherwise>
 					</c:choose>	
 										
-					<td><c:out value="${user.email }" /></td>
+				<%-- 	<td><c:out value="${user.email }" /></td> --%>
 					<td><c:out value="${user.mobile }" /></td>
 					<td><c:out value="${user.address }" /></td>
 					<c:choose>

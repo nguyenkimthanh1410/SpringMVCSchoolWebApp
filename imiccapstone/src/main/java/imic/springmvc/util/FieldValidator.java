@@ -1,6 +1,5 @@
 package imic.springmvc.util;
 
-
 public class FieldValidator {
 	private String regExNumber = "\\d*";
 	private String regExFloat = "[-+]?[0-9]*\\.?[0-9]+$";

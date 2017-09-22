@@ -3,6 +3,7 @@ package imic.springmvc.controller;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -76,7 +77,8 @@ public class RegistrationController {
 		model.addAttribute("userIds", userIds);
 		
 		// Get list of sClassIds from service layer
-		List<Long> sClassIds = sClassService.getListSclassIds();		
+		List<Long> sClassIds = sClassService.getListSclassIds();	
+		Collections.sort(sClassIds);
 		model.addAttribute("sClassIds", sClassIds);
 		
 		return "admin/registrations/createRegistrationForm";
@@ -85,7 +87,7 @@ public class RegistrationController {
 	
 	///////////////CREATE - process form input	
 	@RequestMapping(value={"/createRegistrationForm"}, method=RequestMethod.POST)
-	public String processCreateUserForm(@ModelAttribute("registration") Registration registration, BindingResult bindingResult, 
+	public String processCreateRegistrationForm(@ModelAttribute("registration") Registration registration, BindingResult bindingResult, 
 										Model model, HttpServletRequest request) {
 							
 		registrationValidator.validate(registration, bindingResult);
@@ -96,7 +98,8 @@ public class RegistrationController {
 			model.addAttribute("userIds", userIds);
 			
 			// Get list of sClassIds from service layer
-			List<Long> sClassIds = sClassService.getListSclassIds();		
+			List<Long> sClassIds = sClassService.getListSclassIds();
+			Collections.sort(sClassIds);
 			model.addAttribute("sClassIds", sClassIds);
 			
 			return "admin/registrations/createRegistrationForm";// check again
@@ -139,7 +142,8 @@ public class RegistrationController {
 		model.addAttribute("userIds", userIds);
 		
 		// Get list of sClassIds from service layer
-		List<Long> sClassIds = sClassService.getListSclassIds();		
+		List<Long> sClassIds = sClassService.getListSclassIds();
+		Collections.sort(sClassIds);
 		model.addAttribute("sClassIds", sClassIds);
 		
 		return "admin/registrations/showEditRegistrationForm";		
@@ -159,7 +163,8 @@ public class RegistrationController {
 			model.addAttribute("userIds", userIds);
 			
 			// Get list of sClassIds from service layer
-			List<Long> sClassIds = sClassService.getListSclassIds();		
+			List<Long> sClassIds = sClassService.getListSclassIds();	
+			Collections.sort(sClassIds);// sort in ascending order
 			model.addAttribute("sClassIds", sClassIds);
 			return "admin/registrations/showEditRegistrationForm";
 		}
@@ -170,35 +175,6 @@ public class RegistrationController {
 		
 		return "redirect:/admin/registrations";
 	}
-	
-
-	/*//////////////////EDIT - PROCESS EDIT FORM: 
-	 * 
-	 * Wrong Format on 17-Sep-17: Carelessly check again name and method return when copy from User to Registration
-	 * 
-	@RequestMapping(value={"/showEditRegistrationForm/{id}"}, method=RequestMethod.POST)
-	public String processEditUserForm(@ModelAttribute("registration") Registration registration, 
-							BindingResult bindingResult, HttpServletRequest request, Model model) {
-		// Valid inputs
-		registrationValidator.validate(registration, bindingResult);
-		if(bindingResult.hasErrors()) {
-			// To allow drop-down boxes active
-			// Get list of students from service layer!!!!!GET STUDENTS ONLY
-			List<Long> userIds = userService.getIdsByRole(Integer.parseInt(StringPool.STUDENT_ROLE));		
-			model.addAttribute("userIds", userIds);
-			
-			// Get list of sClassIds from service layer
-			List<Long> sClassIds = sClassService.getListSclassIds();		
-			model.addAttribute("sClassIds", sClassIds);
-			return "admin/users/showEditUserForm";
-		}
-		
-		// Get user login
-		String userlogin = (String) request.getSession().getAttribute("userlogin");	
-		registrationService.update(registration, userlogin);
-		
-		return "redirect:/admin/registrations";
-	}*/
 	
 
 	///////////////// DELETE USER

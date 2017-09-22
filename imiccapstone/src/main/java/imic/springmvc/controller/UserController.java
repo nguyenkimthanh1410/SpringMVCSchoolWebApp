@@ -88,6 +88,8 @@ public class UserController {
 			List<Integer> roles = userService.getListRoles();		
 			model.addAttribute("roles", roles); // Admin: 1, Teacher: 2, Student: 3, Guest: 4
 			
+			//System.out.println("----------------FIELD ERROR: " + bindingResult.getFieldError("password"));
+			
 			// Get list status from service layer
 			List<Integer> statusList = userService.getListStatus();		
 			model.addAttribute("statusList", statusList);// Active: 1, Inactive: 2

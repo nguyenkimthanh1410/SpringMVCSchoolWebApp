@@ -1,6 +1,7 @@
 package imic.springmvc.dao;
 
-import java.util.ArrayList;
+
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
@@ -9,8 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.sun.jna.platform.win32.WinDef.LONG;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
 
+import imic.springmvc.dao.UserDao;
+import imic.springmvc.dao.UserRowMapper;
 import imic.springmvc.dto.User;
 
 @Repository(value="userDao")
@@ -26,13 +31,14 @@ public class UserDaoImpl implements UserDao {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 	
-	
+		
 	//////////////////CREATE
 	private static final String QUERY_INSERT_USER = 
 			"INSERT INTO tblUser (userName,password,firstName,lastName,gender,dob,active,email,mobile, address, role,lastUpdated, lastUpdatedBy)"
 					+ " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	@Override
 	public int insert(User user, String userlogin) {
+		
 		int numOfRowAffected = 
 				jdbcTemplate.update( QUERY_INSERT_USER, 
 					new Object[] {user.getUserName(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getGender(),
@@ -156,6 +162,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<Long> getListUserIds() {
 		List<Long> ids = jdbcTemplate.queryForList(QUERY_SELECT_IDS, Long.class);
+
 		return ids;
 	}	
 

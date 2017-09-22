@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import imic.springmvc.dao.SClassDao;
+import imic.springmvc.dao.SClassRowMapper;
 import imic.springmvc.dto.SClass;
 
 @Repository(value="sClassDao")
@@ -67,7 +69,7 @@ public class SClassDaoImpl implements SClassDao {
 		return sClass;
 	}
 
-	
+	// 22-Sep-17: correct lastUpdated, lastUpdatedBy
 	///////////////UPDATE BY ID	
 	private static final String QUERY_UPDATE_SCLASS_BY_ID =
 			"UPDATE tblClass SET sClassName=?, startDate=?, endDate=?, teacherId=?, lastUpdated=?, lastUpdatedBy=? where sClassId=?";
@@ -81,7 +83,7 @@ public class SClassDaoImpl implements SClassDao {
 			numOfRowAffected = 
 					jdbcTemplate.update(QUERY_UPDATE_SCLASS_BY_ID, 
 							new Object[] {sClass.getsClassName(), sClass.getStartDate(), sClass.getEndDate(), 
-											sClass.getTeacherId(), sClass.getLastUpdated(), sClass.getLastUpdatedBy(), sClass.getsClassId()});
+											sClass.getTeacherId(), new Date(), userlogin, sClass.getsClassId()});
 		}
 		return numOfRowAffected;
 	}

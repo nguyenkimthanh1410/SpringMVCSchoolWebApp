@@ -8,11 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import imic.springmvc.dto.UserIdentity;
+import imic.springmvc.dto.UserLogin;
 import imic.springmvc.service.LoginService;
 import imic.springmvc.util.StringPool;
 
@@ -23,7 +22,7 @@ public class HomeController {
 	private LoginService loginService;
 	
 	@Autowired
-	private UserIdentityValidator userIdentityValidator;
+	private UserLoginValidator userLoginValidator;
 	
 	@RequestMapping(value={"/home", "/"})
 	public String showHomePage(HttpServletRequest request, Model model) {
@@ -55,28 +54,28 @@ public class HomeController {
 	@RequestMapping(value={"/login", "/login.html"}, method=RequestMethod.GET)
 	public String showLoginForm(Model model) {
 		// Create object UserIdentity to bind its properties with form fields
-		model.addAttribute("userIdentity", new UserIdentity());
+		model.addAttribute("userLogin", new UserLogin());
 		return "/login/loginForm";
 	}
 	
 	
 	@RequestMapping(value={"/login", "/login.html"}, method=RequestMethod.POST)
-	public String processLoginForm(@ModelAttribute("userIdentity") UserIdentity  userIdentity,
+	public String processLoginForm(@ModelAttribute("userLogin") UserLogin  userLogin,
 				BindingResult bindingResult, HttpServletRequest request, Model model) {
 		
-		userIdentityValidator.validate(userIdentity, bindingResult);
+		userLoginValidator.validate(userLogin, bindingResult);
 		if (bindingResult.hasErrors()){
 			return "/login/loginForm";
 		}
 				
-		boolean result = loginService.authenticate(userIdentity);
+		boolean result = loginService.authenticate(userLogin);
 		String dashboardRole = "guest";
 		HttpSession httpSession = request.getSession();
 		
 		if(result) {
-			httpSession.setAttribute("userlogin", userIdentity.getUserName());			
+			httpSession.setAttribute("userlogin", userLogin.getUserName());			
 			
-			int roleId = loginService.authorize(userIdentity);
+			int roleId = loginService.authorize(userLogin);
 			if(roleId == Integer.parseInt(StringPool.ADMIN_ROLE)){
 				System.out.println("Hi Admin!!!!!!!!!!!!!");		
 				dashboardRole = "admin";			
@@ -95,7 +94,7 @@ public class HomeController {
 				return "redirect:/home";
 			}
 		}else{
-			System.out.println("Fail to authenticate: (" + userIdentity.getUserName() + "-" + userIdentity.getPassword() + ")");
+			System.out.println("Fail to authenticate: (" + userLogin.getUserName() + "-" + userLogin.getPassword() + ")");
 			return "redirect:/home";
 		}		
 	}

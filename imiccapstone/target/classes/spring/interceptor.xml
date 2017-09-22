@@ -14,14 +14,14 @@
 
 
 	<!-- IMPORTANT -->
-	<!-- Configures the annotation-driven Spring MVC Controller programming model -->
+	<!-- Configures the annotation-driven Spring MVC Controller programming model, only work with WebMVC -->
 	<mvc:annotation-driven />
 	
 	<!-- The ordered set of interceptors that intercept HTTP Servlet Requests handled by Controllers. 
-	Interceptors allow 
-	 requests to be pre/post processed before/after handling. Each interceptor must implement the 
-	 org.springframework.web.servlet.HandlerInterceptor or 
-	 org.springframework.web.context.request.WebRequestInterceptor interface -->
+	Interceptors allow requests to be pre/post processed before/after handling. 
+	Each interceptor must implement the 
+							 org.springframework.web.servlet.HandlerInterceptor or 
+							 org.springframework.web.context.request.WebRequestInterceptor interface -->
 	<mvc:interceptors>
 			<bean id="logActivityInterceptor" class="imic.springmvc.interceptor.LogInterceptor"></bean>
 	</mvc:interceptors>
